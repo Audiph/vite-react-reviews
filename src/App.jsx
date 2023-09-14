@@ -22,6 +22,16 @@ const App = () => {
     });
   };
 
+  const randomItem = () => {
+    let randomNumber = Math.floor(Math.random() * reviews.length);
+    if (randomNumber === id) {
+      randomNumber = id + 1;
+    }
+    const newIndex = randomNumber % reviews.length;
+    // console.log(randomNumber, newIndex);
+    setId(newIndex);
+  };
+
   return (
     <main>
       {reviews
@@ -47,12 +57,7 @@ const App = () => {
                   <FaChevronRight />
                 </button>
               </div>
-              <button
-                className="btn btn-hipster"
-                onClick={() =>
-                  setId(Math.floor(Math.random() * reviews.length))
-                }
-              >
+              <button className="btn btn-hipster" onClick={randomItem}>
                 surprise me
               </button>
             </article>

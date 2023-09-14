@@ -9,13 +9,17 @@ const App = () => {
   // const { id, image, job, name, text } = reviews[id]
 
   const nextItem = () => {
-    const next = (id + 1) % reviews.length;
-    setId(next);
+    setId((index) => {
+      const newIndex = (index + 1) % reviews.length;
+      return newIndex;
+    });
   };
 
   const prevItem = () => {
-    const prev = (id + reviews.length - 1) % reviews.length;
-    setId(prev);
+    setId((index) => {
+      const newIndex = (index + reviews.length - 1) % reviews.length;
+      return newIndex;
+    });
   };
 
   return (

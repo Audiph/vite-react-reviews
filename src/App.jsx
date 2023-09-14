@@ -5,6 +5,9 @@ import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
 const App = () => {
   const [id, setId] = useState(0);
 
+  // this can be used if we don't want to use filter and map method
+  // const { id, image, job, name, text } = reviews[id]
+
   const nextItem = () => {
     const next = (id + 1) % reviews.length;
     setId(next);
